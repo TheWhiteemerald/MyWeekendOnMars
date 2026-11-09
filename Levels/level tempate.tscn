@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://cp46knehj4t8o"]
+
+[ext_resource type="Script" uid="uid://t0f1e3k1365y" path="res://Scripts/level_1.gd" id="1_7g2g1"]
+[ext_resource type="PackedScene" uid="uid://bbqoujfebd4by" path="res://Scenes/mars_background.tscn" id="2_fll1h"]
+[ext_resource type="Texture2D" uid="uid://db30mrv6pko27" path="res://Tilesets/My Weekend on Mars Potential Tileset 2.png" id="3_qy541"]
+[ext_resource type="Texture2D" uid="uid://bci65iuxhohpn" path="res://Tilesets/Semi-Solid Platform 1.png" id="4_45wy7"]
+[ext_resource type="Texture2D" uid="uid://draviefwco5d8" path="res://Tilesets/Semi-Solid Platform 2.png" id="5_ud3to"]
+[ext_resource type="Texture2D" uid="uid://kvr0g5qf6b41" path="res://Tilesets/Unbreakable Tiles.png" id="6_7t8bs"]
+[ext_resource type="Texture2D" uid="uid://c76lycst2v3l4" path="res://Tilesets/Bridge Tiles.png" id="7_p4q1e"]
+[ext_resource type="Texture2D" uid="uid://kothmyp8j2l8" path="res://Tilesets/Unbreakable Tileset.png" id="8_qfaov"]
+[ext_resource type="PackedScene" uid="uid://dtvy4uexs8f0i" path="res://Scenes/sign.tscn" id="9_2u4r5"]
+[ext_resource type="PackedScene" uid="uid://cnaq0o4ll8h5e" path="res://Scenes/Player Character.tscn" id="10_e3qtj"]
+[ext_resource type="PackedScene" uid="uid://bhc1xaak4s7j5" path="res://Scenes/In-Game UI.tscn" id="11_tsayu"]
+[ext_resource type="PackedScene" uid="uid://dx5ye24tdmltb" path="res://Scenes/tension_bar.tscn" id="12_8a8q3"]
+[ext_resource type="PackedScene" uid="uid://4163wsf1ugfi" path="res://Scenes/surface.tscn" id="13_7y4yh"]
+[ext_resource type="PackedScene" uid="uid://if17qe7julje" path="res://Scenes/mineral.tscn" id="14_0psnq"]
+[ext_resource type="PackedScene" uid="uid://cek661uf44keh" path="res://Scenes/health_screw.tscn" id="15_r4pcd"]
+[ext_resource type="PackedScene" uid="uid://ct3ay5t8c46un" path="res://Scenes/recharge_battery.tscn" id="16_dq3ye"]
+[ext_resource type="PackedScene" uid="uid://cquj7yejx5alc" path="res://Scenes/spike_bot.tscn" id="17_vs4e2"]
+[ext_resource type="PackedScene" uid="uid://cqxa1pyjiagfh" path="res://Scenes/gravel_rock.tscn" id="18_q6jj4"]
+[ext_resource type="PackedScene" uid="uid://cohtooarb8fax" path="res://Scenes/muncher_bot.tscn" id="19_b4bil"]
+[ext_resource type="PackedScene" uid="uid://bkraqemq146l0" path="res://Scenes/character_body_2d_2.tscn" id="20_1t40t"]
+[ext_resource type="AudioStream" uid="uid://uo8b7x8ciqjp" path="res://Soundtrack/The Legendary Starfy OST 4 - Hotcha Springs.ogg" id="22_cro03"]
+[ext_resource type="PackedScene" uid="uid://b5pbu634nmrne" path="res://Scenes/energy_fragment.tscn" id="23_sm3p6"]
+[ext_resource type="PackedScene" uid="uid://nmh8e83krkdb" path="res://Scenes/level_goal.tscn" id="24_skvjj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8ov7"]
+texture = ExtResource("3_qy541")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_afw3y"]
+sources/0 = SubResource("TileSetAtlasSource_l8ov7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xq3o"]
+texture = ExtResource("4_45wy7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.115196, -8, -5.935337)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.115196, -8, -5.935337)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.115196, -8, -5.935337)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cays4"]
+texture = ExtResource("5_ud3to")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.2950544, -8, -6.4749136)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.2950544, -8, -6.4749136)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -6.2950544, -8, -6.4749136)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6jei"]
+texture = ExtResource("6_7t8bs")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfq32"]
+texture = ExtResource("7_p4q1e")
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.115196, -8, -8, 8, -8, 8, -8, 8, -6.2950544)
+0:2/0/physics_layer_0/polygon_0/one_way = true
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.115196, -8, -8, 8, -8, 8, -8, 8, -6.2950544)
+1:2/0/physics_layer_0/polygon_0/one_way = true
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.115196, -8, -8, 8, -8, 8, -8, 8, -6.2950544)
+2:2/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8pai"]
+texture = ExtResource("8_qfaov")
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_b6raw"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_h6jei")
+sources/4 = SubResource("TileSetAtlasSource_e8pai")
+sources/0 = SubResource("TileSetAtlasSource_6xq3o")
+sources/1 = SubResource("TileSetAtlasSource_cays4")
+sources/3 = SubResource("TileSetAtlasSource_xfq32")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybfx6"]
+texture = ExtResource("3_qy541")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_vfphn"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_ybfx6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6raw"]
+size = Vector2(42.174965, 19.650013)
+
+[node name="Level 1" type="Node2D" unique_id=548009803]
+script = ExtResource("1_7g2g1")
+
+[node name="Mars Background" parent="." unique_id=775406910 instance=ExtResource("2_fll1h")]
+position = Vector2(811, -1137)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1595926706]
+texture_filter = 1
+tile_set = SubResource("TileSet_afw3y")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2143141173]
+texture_filter = 1
+tile_set = SubResource("TileSet_b6raw")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1122390646]
+texture_filter = 1
+tile_set = SubResource("TileSet_vfphn")
+format = 2
+layer_0/name = "0"
+
+[node name="Signs" type="Node2D" parent="." unique_id=1068194397]
+
+[node name="Sign" parent="Signs" unique_id=1783817702 instance=ExtResource("9_2u4r5")]
+position = Vector2(-1775, -710)
+dialogue_pages = Array[String](["
+  HEY! I'M WALKIN ERE!
+
+  Well... Not really. I don't have legs...
+
+  But I do got things to say! An' a big mouth!", "
+  So youse got caught in the rock slide too, eh?
+
+  But youse got legs, unlike me, and a drill!
+
+  You know you can dig outta here, ya get me?", "
+  Hold down X, or whatever button you prefer!
+
+  You can dig through that orange dirt
+
+  but not that tough rock, see?"])
+
+[node name="CharacterBody2D" parent="." unique_id=1018170929 groups=["Player"] instance=ExtResource("10_e3qtj")]
+texture_filter = 1
+position = Vector2(-1875.0001, -700.00006)
+
+[node name="In-Game UI" parent="." unique_id=1249257159 instance=ExtResource("11_tsayu")]
+
+[node name="Tension Bar" parent="." unique_id=1753569170 instance=ExtResource("12_8a8q3")]
+
+[node name="Surface" parent="." unique_id=1596660342 instance=ExtResource("13_7y4yh")]
+visible = false
+position = Vector2(80.99997, -1035)
+scale = Vector2(20, 20)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Surface" unique_id=718524873]
+position = Vector2(-22.900017, -55.449997)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_b6raw")
+
+[node name="Minerals" type="Node2D" parent="." unique_id=1818857219]
+
+[node name="Crystal Ore" parent="Minerals" unique_id=2048704473 instance=ExtResource("14_0psnq")]
+position = Vector2(-1587, -633)
+
+[node name="Health Screws" type="Node2D" parent="." unique_id=116562816]
+position = Vector2(-218, 504)
+
+[node name="Health Screw" parent="Health Screws" unique_id=1591429717 instance=ExtResource("15_r4pcd")]
+position = Vector2(-1340, -1249)
+
+[node name="Recharge Batteries" type="Node2D" parent="." unique_id=68615850]
+
+[node name="Recharge Battery" parent="Recharge Batteries" unique_id=1694605425 instance=ExtResource("16_dq3ye")]
+position = Vector2(-1864, -603)
+
+[node name="Spike Bots" type="Node2D" parent="." unique_id=1756762247]
+position = Vector2(-599, 472)
+
+[node name="Spike Bot" parent="Spike Bots" unique_id=531253040 instance=ExtResource("17_vs4e2")]
+position = Vector2(-1057, -983)
+
+[node name="Gravels" type="Node2D" parent="." unique_id=829508157]
+position = Vector2(-1442, -759)
+
+[node name="Gravel Rock" parent="Gravels" unique_id=1239440420 groups=["Enemies", "Player"] instance=ExtResource("18_q6jj4")]
+position = Vector2(-354, 153)
+
+[node name="Muncher Bots" type="Node2D" parent="." unique_id=1070618750]
+
+[node name="Muncher Bot" parent="Muncher Bots" unique_id=1809619765 instance=ExtResource("19_b4bil")]
+position = Vector2(-1445.9998, -645)
+
+[node name="Spring Bots" type="Node2D" parent="." unique_id=468516561]
+
+[node name="Spring Bot" parent="Spring Bots" unique_id=863963864 instance=ExtResource("20_1t40t")]
+position = Vector2(-1671, -775)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1811893144]
+visible = false
+stream = ExtResource("22_cro03")
+volume_db = -80.0
+autoplay = true
+attenuation = 0.17075479
+
+[node name="Energy Fragoment" parent="." unique_id=1188972995 instance=ExtResource("23_sm3p6")]
+
+[node name="Level Goal" parent="." unique_id=131938390 instance=ExtResource("24_skvjj")]
+position = Vector2(-1682, -637)
