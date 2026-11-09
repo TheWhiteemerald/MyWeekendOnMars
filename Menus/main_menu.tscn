@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://cvva8ihyfi1wh"]
+
+[ext_resource type="Script" uid="uid://bgxdb5bij46av" path="res://Scripts/main_menu.gd" id="1_cxdly"]
+[ext_resource type="Texture2D" uid="uid://bsktkxwxn2mth" path="res://Dev Log #3 Thumbnail.jpg" id="2_cxdly"]
+[ext_resource type="FontFile" uid="uid://vewdk8mk42hk" path="res://Fonts/Ethnocentric-Regular.otf" id="3_cxdly"]
+[ext_resource type="FontFile" uid="uid://cbp37fkykqv28" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="4_cxdly"]
+[ext_resource type="PackedScene" uid="uid://b3soi1to6tnp2" path="res://Menus/options_menu.tscn" id="5_y501u"]
+
+[node name="Main Menu" type="Control" unique_id=1254341784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxdly")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1811378839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 949.16675
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.576, 0.5)
+texture = ExtResource("2_cxdly")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1862787527]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -694.0
+offset_right = 1114.0
+offset_bottom = 256.0
+grow_vertical = 2
+scale = Vector2(1.8, 1.8)
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=623374725]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=170383845]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1443673059]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5647059, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 16
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_cxdly")
+theme_override_font_sizes/font_size = 100
+text = "My Weekend
+On Mars"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer" unique_id=446466410]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=1240171647]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Seperator3" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2070874077]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2102475435]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1164803311]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1617163646]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=821578910]
+layout_mode = 2
+
+[node name="Start Game Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=384037739]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cxdly")
+theme_override_font_sizes/font_size = 48
+text = "New Game"
+
+[node name="Load Game Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1004266064]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cxdly")
+theme_override_font_sizes/font_size = 48
+keep_pressed_outside = true
+text = " Level Select "
+
+[node name="Options Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=510579904]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cxdly")
+theme_override_font_sizes/font_size = 48
+keep_pressed_outside = true
+text = "Options"
+
+[node name="Quit Button" type="Button" parent="TextureRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1106430697]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_cxdly")
+theme_override_font_sizes/font_size = 48
+keep_pressed_outside = true
+text = "Quit"
+
+[node name="Options Menu" parent="." unique_id=1330902876 instance=ExtResource("5_y501u")]
+visible = false
+layout_mode = 1

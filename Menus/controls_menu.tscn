@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dby7hf61545w4"]
+
+[ext_resource type="Script" uid="uid://bm2l6oww7xuqq" path="res://Scripts/controls_menu.gd" id="1_4lt2d"]
+
+[node name="ControlsMenu" type="Control" unique_id=1955195561]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lt2d")
+
+[node name="Background" type="ColorRect" parent="." unique_id=961002771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.055, 0.065, 0.09, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1520392827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=1802710991]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="Margin/Layout" unique_id=1862560419]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Controls"
+
+[node name="DevicePicker" type="OptionButton" parent="Margin/Layout" unique_id=1676126888]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/Layout" unique_id=198979674]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Rows" type="GridContainer" parent="Margin/Layout/Scroll" unique_id=1147647163]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="Status" type="Label" parent="Margin/Layout" unique_id=1456450785]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Choose an action to change."
+autowrap_mode = 3
+
+[node name="ResetButton" type="Button" parent="Margin/Layout" unique_id=196539382]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restore Defaults (selected device)"
+
+[node name="BackButton" type="Button" parent="Margin/Layout" unique_id=141504521]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"

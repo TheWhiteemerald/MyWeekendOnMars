@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://b3soi1to6tnp2"]
+
+[ext_resource type="Script" uid="uid://t7dc5xhk3fx0" path="res://Scripts/options_menu.gd" id="1_pwtwg"]
+[ext_resource type="FontFile" uid="uid://vewdk8mk42hk" path="res://Fonts/Ethnocentric-Regular.otf" id="2_7gq10"]
+
+[node name="Options Menu" type="Control" unique_id=514100616]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pwtwg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1599925255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Volume" type="HSlider" parent="." unique_id=509917351]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 212.0
+offset_right = 279.0
+offset_bottom = 228.0
+value = 50.0
+
+[node name="Back Button" type="Button" parent="." unique_id=1353549014]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 649.0
+offset_right = 134.0
+offset_bottom = 680.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Back"
+
+[node name="Options Label" type="Label" parent="." unique_id=822694526]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 1144.0
+offset_bottom = 69.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7gq10")
+theme_override_font_sizes/font_size = 48
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio Label" type="Label" parent="." unique_id=2001980396]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 162.0
+offset_right = 210.0
+offset_bottom = 204.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7gq10")
+theme_override_font_sizes/font_size = 26
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution Label" type="Label" parent="." unique_id=380410436]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 302.0
+offset_right = 305.0
+offset_bottom = 344.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7gq10")
+theme_override_font_sizes/font_size = 26
+text = "Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1723973309]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 357.0
+offset_right = 232.0
+offset_bottom = 388.0
+selected = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Controller Label" type="Label" parent="." unique_id=1522617501]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 463.0
+offset_right = 214.0
+offset_bottom = 505.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_7gq10")
+theme_override_font_sizes/font_size = 26
+text = "Controller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls Button" type="Button" parent="." unique_id=1206845353]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 514.0
+offset_right = 239.0
+offset_bottom = 557.0
+text = "Change"
+
+[connection signal="value_changed" from="Volume" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="Back Button" to="." method="_on_back_button_toggled"]
+[connection signal="toggled" from="Back Button" to="." method="_on_exit_button_toggled"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

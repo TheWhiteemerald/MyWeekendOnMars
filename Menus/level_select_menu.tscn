@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://c2sqyycjace2v"]
+
+[ext_resource type="Script" uid="uid://bcve4h2n72k5w" path="res://Scripts/level_select_menu.gd" id="1_gywis"]
+[ext_resource type="FontFile" uid="uid://cbp37fkykqv28" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_d4ixy"]
+[ext_resource type="PackedScene" uid="uid://vbtkp76skgxv" path="res://Scenes/level_card.tscn" id="3_dw6f3"]
+[ext_resource type="Texture2D" uid="uid://brb2b10gjpu8n" path="res://Screenshot 2026-10-13 125225.png" id="4_1uhlr"]
+[ext_resource type="Texture2D" uid="uid://bsktkxwxn2mth" path="res://Dev Log #3 Thumbnail.jpg" id="4_6eh8u"]
+
+[node name="Level Select" type="Control" unique_id=1222217028]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gywis")
+main_menu_scene = "uid://cvva8ihyfi1wh"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=756807298]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 133.0
+offset_bottom = 248.0
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=986431678]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2060843434]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "Select Level"
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1266242443]
+layout_mode = 2
+
+[node name="TestRoom" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=74415924]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/TestRoom" unique_id=1347636486]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "Debug Room"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/TestRoom" unique_id=1000569242]
+layout_mode = 2
+columns = 3
+
+[node name="LevelCard" parent="MarginContainer/VBoxContainer/Rows/TestRoom" unique_id=693433715 instance=ExtResource("3_dw6f3")]
+layout_mode = 2
+thumbnail = ExtResource("4_1uhlr")
+scene_path = "uid://cyvjf8xt7ggak"
+replay_unlocked = true
+crystal_requirement_met = true
+
+[node name="MarsRow" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=2057057495]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/MarsRow" unique_id=1950769263]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "
+
+
+
+
+
+Mars Surface"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/MarsRow" unique_id=1779515487]
+layout_mode = 2
+columns = 3
+
+[node name="LevelCard" parent="MarginContainer/VBoxContainer/Rows/MarsRow" unique_id=877523138 instance=ExtResource("3_dw6f3")]
+layout_mode = 2
+thumbnail = ExtResource("4_6eh8u")
+scene_path = "uid://dqy15knx28sff"
+replay_unlocked = true
+crystal_requirement_met = true
+
+[node name="CrystalRow" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=1271876607]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/CrystalRow" unique_id=441396608]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "Crystal Mines"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/CrystalRow" unique_id=136788324]
+layout_mode = 2
+columns = 3
+
+[node name="JungleRow" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=1294203423]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/JungleRow" unique_id=707706076]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "Under Jungle"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/JungleRow" unique_id=1310965706]
+layout_mode = 2
+columns = 3
+
+[node name="MagmaRow" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=516554471]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/MagmaRow" unique_id=1087741375]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "Magma Flows"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/MagmaRow" unique_id=1059860313]
+layout_mode = 2
+columns = 3
+
+[node name="Core" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Rows" unique_id=579766271]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WorldName" type="Label" parent="MarginContainer/VBoxContainer/Rows/Core" unique_id=593578453]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4ixy")
+text = "The Core"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/Rows/Core" unique_id=603405111]
+layout_mode = 2
+columns = 3
+
+[node name="DetailsLabel" type="Label" parent="." unique_id=1626569749]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 670.0
+offset_right = 1233.0
+offset_bottom = 693.0
+
+[node name="BackButton" type="Button" parent="." unique_id=1672444374]
+layout_mode = 0
+offset_left = 1186.0
+offset_top = 663.0
+offset_right = 1231.0
+offset_bottom = 694.0
+text = "Back"
