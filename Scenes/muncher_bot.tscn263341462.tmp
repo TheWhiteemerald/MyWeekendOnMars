@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cohtooarb8fax"]
+
+[ext_resource type="Script" uid="uid://dvw2yjnwpjt42" path="res://Scenes/muncher_bot.gd" id="1_mhjk2"]
+[ext_resource type="Texture2D" uid="uid://dujxkttvit2al" path="res://Sprites/Muncher Bot Template Sprite.png" id="2_o2y5h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47hgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o2y5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhjk2"]
+size = Vector2(20.000011, 20.714298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2y5h"]
+size = Vector2(27.5, 28.750004)
+
+[node name="Muncher Bot" type="CharacterBody2D" unique_id=1809619765]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_mhjk2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=821300869]
+sprite_frames = SubResource("SpriteFrames_47hgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283372184]
+position = Vector2(1.4285712, 4.642855)
+scale = Vector2(0.99999917, 0.99999917)
+shape = SubResource("RectangleShape2D_mhjk2")
+
+[node name="Sight Ray" type="RayCast2D" parent="." unique_id=374127866]
+
+[node name="Damage Area" type="Area2D" parent="." unique_id=177424838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" unique_id=1319509787]
+position = Vector2(1.2499981, 1.8750014)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_o2y5h")

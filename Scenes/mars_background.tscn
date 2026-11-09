@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bbqoujfebd4by"]
+
+[ext_resource type="Texture2D" uid="uid://bl455ppvcqhr6" path="res://Backgrounds/Mars Sky Background.png" id="1_w22um"]
+[ext_resource type="Texture2D" uid="uid://cslxxousvdpbi" path="res://Backgrounds/Mars Sun Background.png" id="2_kevv2"]
+[ext_resource type="Texture2D" uid="uid://cxs0rr0lt11kk" path="res://Backgrounds/Mars Back Mountains Background.png" id="3_p2uki"]
+[ext_resource type="Texture2D" uid="uid://s7124ck5nfs3" path="res://Backgrounds/Mars Front Mountains Background.png" id="4_2grgb"]
+[ext_resource type="Texture2D" uid="uid://dyptas4d0vgtv" path="res://Backgrounds/Mars Sand Background.png" id="5_kevv2"]
+[ext_resource type="Texture2D" uid="uid://csks7yml6866q" path="res://Backgrounds/Mars Front Rocks Background.png" id="5_v5bm8"]
+[ext_resource type="Texture2D" uid="uid://be5y26l5ojpr7" path="res://Backgrounds/Mars Back Rocks Background.png" id="6_p2uki"]
+[ext_resource type="Texture2D" uid="uid://bbafla5682wjd" path="res://Backgrounds/Mars Far Back Rocks Background.png" id="6_v5bm8"]
+[ext_resource type="Texture2D" uid="uid://dh47paikjro7s" path="res://Backgrounds/Mars Middle Rocks Background.png" id="8_my5f4"]
+[ext_resource type="Texture2D" uid="uid://bdofyxkqvjeki" path="res://Backgrounds/Mars Ground Background.png" id="10_my5f4"]
+
+[node name="Mars Background" type="Node2D" unique_id=775406910]
+z_index = -10
+
+[node name="Sky" type="Parallax2D" parent="." unique_id=2037058281]
+texture_repeat = 2
+scroll_scale = Vector2(0.02, 0.02)
+scroll_offset = Vector2(0, 320)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=382450663]
+texture_filter = 1
+position = Vector2(0, -104)
+texture = ExtResource("1_w22um")
+centered = false
+
+[node name="Sun" type="Parallax2D" parent="." unique_id=723742778]
+scale = Vector2(0.7, 0.7)
+scroll_scale = Vector2(0.02, 0.02)
+scroll_offset = Vector2(-175, 275)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Sun" unique_id=569499031]
+texture_filter = 1
+texture = ExtResource("2_kevv2")
+centered = false
+
+[node name="Far Mountains" type="Parallax2D" parent="." unique_id=1229687992]
+scroll_scale = Vector2(0.15, 0.1)
+scroll_offset = Vector2(80, 200)
+repeat_size = Vector2(288, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Far Mountains" unique_id=712898280]
+texture_filter = 1
+texture = ExtResource("3_p2uki")
+centered = false
+
+[node name="Near Mountains" type="Parallax2D" parent="." unique_id=234945813]
+scroll_scale = Vector2(0.15, 0.1)
+scroll_offset = Vector2(80, 200)
+repeat_size = Vector2(288, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Near Mountains" unique_id=1736221881]
+texture_filter = 1
+position = Vector2(64, 32)
+texture = ExtResource("4_2grgb")
+centered = false
+
+[node name="Background Sand" type="Parallax2D" parent="." unique_id=1458430884]
+scroll_scale = Vector2(0.5, 0.1)
+scroll_offset = Vector2(80, 264)
+repeat_size = Vector2(288, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Sand" unique_id=313062094]
+texture_filter = 1
+texture = ExtResource("5_kevv2")
+centered = false
+
+[node name="Background Far Back Rocks" type="Parallax2D" parent="." unique_id=1488068547]
+scroll_scale = Vector2(0.5, 0.1)
+scroll_offset = Vector2(80, 264)
+repeat_size = Vector2(288, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Far Back Rocks" unique_id=2083535184]
+texture_filter = 1
+position = Vector2(0, 56)
+texture = ExtResource("6_v5bm8")
+centered = false
+
+[node name="Background Back Rocks" type="Parallax2D" parent="." unique_id=824162717]
+scroll_scale = Vector2(0.15, 0.1)
+scroll_offset = Vector2(80, 200)
+repeat_size = Vector2(288, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Back Rocks" unique_id=1992601950]
+texture_filter = 1
+position = Vector2(0, 80)
+texture = ExtResource("6_p2uki")
+centered = false
+
+[node name="Background Middle Rocks" type="Parallax2D" parent="." unique_id=885194145]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Middle Rocks" unique_id=1373772850]
+texture_filter = 1
+position = Vector2(0, 112)
+texture = ExtResource("8_my5f4")
+centered = false
+
+[node name="Background Front Rocks" type="Parallax2D" parent="." unique_id=597053557]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Front Rocks" unique_id=1211324129]
+texture_filter = 1
+position = Vector2(0, 136)
+texture = ExtResource("5_v5bm8")
+centered = false
+
+[node name="Background Ground" type="Parallax2D" parent="." unique_id=68255386]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Ground" unique_id=471563746]
+texture_filter = 1
+position = Vector2(0, 328)
+scale = Vector2(3.3333333, 1)
+texture = ExtResource("10_my5f4")
+centered = false

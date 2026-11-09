@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cqxa1pyjiagfh"]
+
+[ext_resource type="Texture2D" uid="uid://dacbggqmcg1pi" path="res://Tilesets/Gravel.png" id="1_kcrr6"]
+[ext_resource type="Script" uid="uid://cxfuvthwtwvsv" path="res://Scripts/gravel_rock.gd" id="1_ofgjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3qnb"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8114"]
+size = Vector2(14, 4)
+
+[sub_resource type="Animation" id="Animation_ofgjy"]
+resource_name = "Gravel Shake"
+length = 0.43333334
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 0.0021762908
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.18, 0.24, 0.29, 0.33, 0.36, 0.38, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g3qnb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3qnb"]
+_data = {
+&"Gravel Shake": SubResource("Animation_ofgjy"),
+&"RESET": SubResource("Animation_g3qnb")
+}
+
+[node name="Gravel Rock" type="CharacterBody2D" unique_id=1239440420]
+script = ExtResource("1_ofgjy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1040405567]
+texture_filter = 1
+texture = ExtResource("1_kcrr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2003183645]
+shape = SubResource("RectangleShape2D_g3qnb")
+
+[node name="Damage Area" type="Area2D" parent="." unique_id=661471539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" unique_id=794450353]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_n8114")
+
+[node name="Support Check" type="RayCast2D" parent="." unique_id=229416638]
+target_position = Vector2(0, 18)
+hit_from_inside = true
+
+[node name="Warning Timer" type="Timer" parent="." unique_id=2111766916]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790944694]
+libraries/ = SubResource("AnimationLibrary_g3qnb")

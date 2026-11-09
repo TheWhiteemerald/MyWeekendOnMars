@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddnqm1t8nif58"]
+
+[ext_resource type="Script" uid="uid://2i6w5b5ywtft" path="res://Scripts/muncher_defeat_effect.gd" id="1_12au5"]
+[ext_resource type="Texture2D" uid="uid://dredeljiry2sn" path="res://Sprites/Muncher Bot About to Be Cracked.png" id="2_odsam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g3e6"]
+atlas = ExtResource("2_odsam")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odsam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g3e6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MuncherDefeatEffect" type="Node2D" unique_id=1538963602]
+script = ExtResource("1_12au5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1181000635]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_odsam")

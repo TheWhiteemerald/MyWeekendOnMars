@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bhc1xaak4s7j5"]
+
+[ext_resource type="Script" uid="uid://brtbarw6bxc8b" path="res://Scripts/in_game_ui.gd" id="1_nobjt"]
+[ext_resource type="Texture2D" uid="uid://10jhas23gd3n" path="res://User Interface/My Weekend On Mars Health Bar 5.png" id="2_vdj1u"]
+[ext_resource type="Texture2D" uid="uid://3bj0326ea2ns" path="res://User Interface/My Weekend On Mars Health Bar 4.png" id="3_gj6de"]
+[ext_resource type="Texture2D" uid="uid://ks38vi6cwk1s" path="res://User Interface/My Weekend On Mars Health Bar 3.png" id="4_nno6h"]
+[ext_resource type="Texture2D" uid="uid://bl52bfmvbhdil" path="res://User Interface/My Weekend On Mars Health Bar 2.png" id="5_1rfx2"]
+[ext_resource type="Texture2D" uid="uid://dwhcnq3acrmi7" path="res://User Interface/My Weekend On Mars Health Bar 1.png" id="6_osywp"]
+[ext_resource type="Texture2D" uid="uid://ccjx5p3nxq2e3" path="res://User Interface/My Weekend On Mars Health Bar 0.png" id="7_465gd"]
+[ext_resource type="Texture2D" uid="uid://dfdrv6hipxupg" path="res://User Interface/Energy Bar Empty.png" id="8_nobjt"]
+[ext_resource type="Texture2D" uid="uid://dxvjfief6duj5" path="res://User Interface/Energy Bar Full.png" id="9_vdj1u"]
+
+[node name="In-Game UI" type="CanvasLayer" unique_id=1384509490]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+script = ExtResource("1_nobjt")
+health_5 = ExtResource("2_vdj1u")
+health_4 = ExtResource("3_gj6de")
+health_3 = ExtResource("4_nno6h")
+health_2 = ExtResource("5_1rfx2")
+health_1 = ExtResource("6_osywp")
+health_0 = ExtResource("7_465gd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1428465360]
+offset_left = 10.0
+offset_right = 258.0
+offset_bottom = 141.11111
+scale = Vector2(1.5, 1.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=82169318]
+layout_mode = 2
+theme_override_constants/separation = -22
+
+[node name="HealthDisplay" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=339594876]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_vdj1u")
+stretch_mode = 2
+
+[node name="EnergyBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer" unique_id=79122055]
+texture_filter = 1
+layout_mode = 2
+texture_under = ExtResource("8_nobjt")
+texture_progress = ExtResource("9_vdj1u")
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=1523468614]
+layout_mode = 2

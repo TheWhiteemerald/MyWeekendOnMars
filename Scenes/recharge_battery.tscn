@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ct3ay5t8c46un"]
+
+[ext_resource type="Texture2D" uid="uid://gmyjqk4ht8ji" path="res://Sprites/Energy Can.png" id="1_86y5b"]
+[ext_resource type="Script" uid="uid://bdh4s0n2m20n4" path="res://Scripts/recharge_battery.gd" id="1_q1vak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1vak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_86y5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3nsb"]
+
+[node name="Recharge Battery" type="Area2D" unique_id=1694605425]
+script = ExtResource("1_q1vak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1975840572]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_q1vak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=569962838]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_w3nsb")

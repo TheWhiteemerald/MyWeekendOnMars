@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://vbtkp76skgxv"]
+
+[ext_resource type="Script" uid="uid://b0t0c53biy87r" path="res://Scripts/level_card.gd" id="1_6hpdq"]
+[ext_resource type="Texture2D" uid="uid://bsktkxwxn2mth" path="res://Dev Log #3 Thumbnail.jpg" id="2_crsne"]
+
+[node name="LevelCard" type="Button" unique_id=693433715]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_6hpdq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1229861623]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1654.0
+scale = Vector2(0.09, 0.06)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=60513221]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Thumbnail" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=376121834]
+layout_mode = 2
+texture = ExtResource("2_crsne")
+expand_mode = 4
+
+[node name="LevelName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=392560819]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=253548490]
+layout_mode = 2

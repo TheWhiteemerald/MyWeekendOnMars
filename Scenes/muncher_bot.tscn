@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cohtooarb8fax"]
+
+[ext_resource type="Script" uid="uid://dvw2yjnwpjt42" path="res://Scripts/muncher_bot.gd" id="1_mhjk2"]
+[ext_resource type="PackedScene" uid="uid://ct3ay5t8c46un" path="res://Scenes/recharge_battery.tscn" id="2_14dgs"]
+[ext_resource type="Texture2D" uid="uid://twej3c3amcjl" path="res://Sprites/Muncher Bot.png" id="2_mhjk2"]
+[ext_resource type="PackedScene" uid="uid://cek661uf44keh" path="res://Scenes/health_screw.tscn" id="3_yf0qk"]
+[ext_resource type="Texture2D" uid="uid://dredeljiry2sn" path="res://Sprites/Muncher Bot About to Be Cracked.png" id="4_bsv42"]
+[ext_resource type="Texture2D" uid="uid://b31pvf5c3hlwj" path="res://Sprites/Muncher Bot Cracked.png" id="4_g0d3m"]
+[ext_resource type="PackedScene" uid="uid://ddnqm1t8nif58" path="res://Scenes/muncher_defeat_effect.tscn" id="4_yf0qk"]
+[ext_resource type="Texture2D" uid="uid://ckjo51p8qebgk" path="res://Sprites/Muncher Bot Cracked 1.png" id="5_14dgs"]
+[ext_resource type="Texture2D" uid="uid://1d177i4mmf4j" path="res://Sprites/Muncher Bot Cracked 2.png" id="6_yf0qk"]
+[ext_resource type="Texture2D" uid="uid://b73ohg4q60m7s" path="res://Sprites/Muncher Bot Blink.png" id="9_14dgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14dgs"]
+atlas = ExtResource("9_14dgs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by6jl"]
+atlas = ExtResource("4_bsv42")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4i5t"]
+atlas = ExtResource("5_14dgs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqves"]
+atlas = ExtResource("6_yf0qk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf0qk"]
+atlas = ExtResource("4_g0d3m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2y5h"]
+atlas = ExtResource("2_mhjk2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47hgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14dgs")
+}],
+"loop": 0,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by6jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4i5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqves")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf0qk")
+}],
+"loop": 1,
+"name": &"cracks",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2y5h")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhjk2"]
+size = Vector2(20.000011, 20.714298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2y5h"]
+size = Vector2(27.5, 28.750004)
+
+[node name="Muncher Bot" type="CharacterBody2D" unique_id=1809619765 groups=["Enemies"]]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("1_mhjk2")
+battery_scene = ExtResource("2_14dgs")
+screw_scene = ExtResource("3_yf0qk")
+defeat_effect_scene = ExtResource("4_yf0qk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=821300869]
+sprite_frames = SubResource("SpriteFrames_47hgy")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283372184]
+position = Vector2(1.4285712, 4.642855)
+scale = Vector2(0.99999917, 0.99999917)
+shape = SubResource("RectangleShape2D_mhjk2")
+
+[node name="Sight Ray" type="RayCast2D" parent="." unique_id=374127866]
+
+[node name="Damage Area" type="Area2D" parent="." unique_id=177424838]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" unique_id=1319509787]
+position = Vector2(1.2499981, 1.8750014)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_o2y5h")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cquj7yejx5alc"]
+
+[ext_resource type="Script" uid="uid://cmiaqylxaluks" path="res://Scripts/spike_bot.gd" id="1_djpio"]
+[ext_resource type="Texture2D" uid="uid://mle3dsdwgx63" path="res://Sprites/Spike Bot.png" id="2_djpio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w17jn"]
+atlas = ExtResource("2_djpio")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8j4o"]
+atlas = ExtResource("2_djpio")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djpio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w17jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8j4o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv5s5"]
+size = Vector2(12.5, 12)
+
+[node name="Spike Bot" type="Area2D" unique_id=531253040]
+script = ExtResource("1_djpio")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1808704401]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_djpio")
+autoplay = "default"
+frame = 1
+frame_progress = 0.045105703
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=180393581]
+position = Vector2(-0.25, 0)
+shape = SubResource("RectangleShape2D_nv5s5")

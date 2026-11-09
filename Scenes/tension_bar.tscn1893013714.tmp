@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dx5ye24tdmltb"]
+
+[ext_resource type="Script" uid="uid://b6mtmm7bcoomr" path="res://Scripts/tension_bar.gd" id="1_hqybj"]
+[ext_resource type="Texture2D" uid="uid://de4nqf4snuuel" path="res://User Interface/Tension Bar Empty.png" id="2_ii6bt"]
+[ext_resource type="Texture2D" uid="uid://bcbx8btuhtvp" path="res://User Interface/Tension Bar Full.png" id="3_fw0cl"]
+
+[node name="Tension Bar" type="CanvasLayer" unique_id=1753569170]
+script = ExtResource("1_hqybj")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=533111742]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("2_ii6bt")
+texture_over = ExtResource("3_fw0cl")

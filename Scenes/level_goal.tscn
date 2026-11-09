@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://nmh8e83krkdb"]
+
+[ext_resource type="Script" uid="uid://djvrrus0b5lk0" path="res://Scripts/level_goal.gd" id="1_gnwa2"]
+[ext_resource type="Texture2D" uid="uid://cxcu13hdtiqe4" path="res://Sprites/End Goal.png" id="2_3t2xu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t2xu"]
+size = Vector2(41.75, 40.75)
+
+[node name="Level Goal" type="Area2D" unique_id=131938390]
+script = ExtResource("1_gnwa2")
+normal_level_path = "uid://cbjjghbjoe7rt"
+secret_level_path = "uid://bst22q6igtouy"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1786748312]
+texture_filter = 1
+texture = ExtResource("2_3t2xu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014805207]
+shape = SubResource("RectangleShape2D_3t2xu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=783573598]

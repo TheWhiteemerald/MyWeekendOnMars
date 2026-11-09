@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dgrx3o8dpe6dv"]
+
+[ext_resource type="Script" uid="uid://c2nrfrer245ho" path="res://Scripts/spring_bot.gd" id="1_qe2e5"]
+[ext_resource type="Texture2D" uid="uid://b46ld2s4lxm16" path="res://Sprites/Spring Bot.png" id="2_c1si5"]
+[ext_resource type="PackedScene" uid="uid://ct3ay5t8c46un" path="res://Scenes/recharge_battery.tscn" id="2_qe2e5"]
+[ext_resource type="PackedScene" uid="uid://cek661uf44keh" path="res://Scenes/health_screw.tscn" id="3_igqhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye61l"]
+atlas = ExtResource("2_c1si5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_recd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye61l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiayb"]
+size = Vector2(10, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws4tp"]
+size = Vector2(28, 29)
+
+[node name="Spring Bot" type="CharacterBody2D" unique_id=863963864]
+script = ExtResource("1_qe2e5")
+battery_scene = ExtResource("2_qe2e5")
+screw_scene = ExtResource("3_igqhl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1884153236]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_recd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1498125478]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_aiayb")
+
+[node name="Sight Ray" type="RayCast2D" parent="." unique_id=550265347]
+target_position = Vector2(0, 100)
+
+[node name="Damage Area" type="Area2D" parent="." unique_id=2124395080]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" unique_id=1574929005]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ws4tp")

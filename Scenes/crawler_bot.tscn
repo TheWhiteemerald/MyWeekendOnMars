@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://j02s0w6lxusm"]
+
+[ext_resource type="Script" uid="uid://c4knixgvek0c1" path="res://Scripts/crawler_bot.gd" id="1_fsm0r"]
+[ext_resource type="Texture2D" uid="uid://dix5s5bur7o0x" path="res://Sprites/Crawler Bot.png" id="2_hrt1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nqty"]
+atlas = ExtResource("2_hrt1f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phdul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nqty")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i5ks"]
+size = Vector2(20, 21.875)
+
+[node name="Crawler Bot" type="CharacterBody2D" unique_id=2027131874]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_fsm0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1167526350]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_phdul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1366744228]
+position = Vector2(8.9406944e-07, 0)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_4i5ks")
+
+[node name="SurfaceRay" type="RayCast2D" parent="." unique_id=868075238]
+position = Vector2(16, 0)
+target_position = Vector2(0, 12)
+
+[node name="ForwardRay" type="RayCast2D" parent="." unique_id=1536244767]
+target_position = Vector2(12, 0)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5pbu634nmrne"]
+
+[ext_resource type="Script" uid="uid://b5m3y5q1pfff2" path="res://Scripts/energy_fragment.gd" id="1_0qvcc"]
+[ext_resource type="Texture2D" uid="uid://cr5d84xb2v08w" path="res://Sprites/Energy Fragment.png" id="2_s8f8n"]
+
+[node name="EnergyFragment" type="StaticBody2D" unique_id=1188972995]
+script = ExtResource("1_0qvcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1000095397]
+texture_filter = 1
+texture = ExtResource("2_s8f8n")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=968821735]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1283556861]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dtvy4uexs8f0i"]
+
+[ext_resource type="Script" uid="uid://bqhq0fye6esde" path="res://Scripts/sign.gd" id="1_fmf1u"]
+[ext_resource type="Texture2D" uid="uid://cnuqijp7ei3ha" path="res://Sprites/Sign Bot.png" id="2_m6mpx"]
+[ext_resource type="Texture2D" uid="uid://mewm1yl61t8x" path="res://User Interface/Action Icon.png" id="3_6c32n"]
+[ext_resource type="FontFile" uid="uid://cbp37fkykqv28" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="3_hqvqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6mpx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6raw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6c32n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sign" type="Area2D" unique_id=1783817702]
+process_mode = 3
+script = ExtResource("1_fmf1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101224870]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_m6mpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921022637]
+shape = SubResource("RectangleShape2D_m6mpx")
+
+[node name="InteractionIcon" type="VisibleOnScreenNotifier2D" parent="." unique_id=1483782963]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="InteractionIcon" unique_id=41071440]
+texture_filter = 1
+position = Vector2(0, -22)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_b6raw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1525261346]
+
+[node name="DialoguePanel" type="Panel" parent="CanvasLayer" unique_id=1151299754]
+offset_left = 72.0
+offset_top = 158.0
+offset_right = 1215.0
+offset_bottom = 389.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DialoguePanel" unique_id=826562271]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/DialoguePanel/MarginContainer" unique_id=787550632]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hqvqy")
+theme_override_font_sizes/font_size = 32

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://kb1rrqx7n6rl"]
+
+[ext_resource type="Script" uid="uid://bestamh0h6xfe" path="res://Scripts/stalactite.gd" id="1_i8adv"]
+[ext_resource type="Texture2D" uid="uid://cyuhkmr0xv8s6" path="res://Tilesets/Stalactite.png" id="1_wn5c2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6raw"]
+size = Vector2(11, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxwjg"]
+size = Vector2(48, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8adv"]
+size = Vector2(13, 7)
+
+[sub_resource type="Animation" id="Animation_i8adv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_exx1m"]
+resource_name = "Stalactite Shake"
+length = 0.4
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 0.0006400986
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.18, 0.24, 0.28, 0.32, 0.36, 0.38, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxbpq"]
+_data = {
+&"RESET": SubResource("Animation_i8adv"),
+&"Stalactite Shake": SubResource("Animation_exx1m")
+}
+
+[node name="Stalactite Rock" type="CharacterBody2D" unique_id=548872635]
+script = ExtResource("1_i8adv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=848733663]
+texture_filter = 1
+texture = ExtResource("1_wn5c2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1892002781]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_b6raw")
+
+[node name="Trigger Area" type="Area2D" parent="." unique_id=492725661]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" unique_id=2140944152]
+process_physics_priority = 1
+position = Vector2(0, 50)
+shape = SubResource("RectangleShape2D_pxwjg")
+
+[node name="Damage Area" type="Area2D" parent="." unique_id=264322356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" unique_id=1846121995]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_i8adv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908741803]
+libraries/ = SubResource("AnimationLibrary_oxbpq")
+
+[node name="Warning Timer" type="Timer" parent="." unique_id=812500184]
